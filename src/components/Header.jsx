@@ -8,7 +8,7 @@ import nodeImg from '../assets/node.png';
 import mysqlImg from '../assets/mysql.png';
 import figmaImg from '../assets/figma.png';
 import githubImg from '../assets/github.png';
-import foto from '../assets/foto.jpg';
+import foto from '../assets/Profilio.jpg';
 
 export default function Header() {
     const skills = [
@@ -40,12 +40,7 @@ export default function Header() {
                 </div>
 
                 <div className="header-content">
-                    {/* <h1>Egidijus Žarpnickas</h1>
-                    <h2> Junior full stack developer</h2>
-                    <p className="description">
-                        Esu entuziastingas web kūrėjas, besispecializuojantis modernių web aplikacijų kūrime.
-                        Turiu patirties dirbant su React, JavaScript ir kitomis moderniomis technologijomis.
-                    </p> */}
+      
 
                     <div className="skills-section">
                         <h3>Mano įgūdžiai</h3>
