@@ -1,0 +1,110 @@
+// Kintamieji
+$dark-bg: #1a1a1a;
+$primary-color: #007bff;
+$text-color: #fff;
+$input-bg: #2a2a2a;
+$border-radius: 8px;
+$transition-time: 0.3s;
+
+.kontaktai {
+    background-color: $dark-bg;
+    color: $text-color;
+    padding: 10px 0 0;
+
+    &-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    &-content {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 3rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    &-info {
+        width: 20rem;
+        height: 25rem;
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: rgba($text-color, 0.8);
+        }
+    }
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        i {
+            width: 30px;
+            color: $primary-color;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    padding-left: 35px;
+
+    a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $input-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $text-color;
+        text-decoration: none;
+        transition: all $transition-time ease;
+
+        &:hover {
+            background-color: $primary-color;
+            transform: translateY(-3px);
+        }
+
+        i {
+            font-size: 1.2rem;
+        }
+
+        img {
+            border-radius: 10%;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba($text-color, 0.1);
+
+    p {
+        color: rgba($text-color, 0.6);
+    }
+}

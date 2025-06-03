@@ -1,0 +1,139 @@
+// Kintamieji
+$primary-color: #007bff;
+$text-color: #fff;
+$white: #1a1a1a;
+$transition-time: 0.3s;
+$navbar-height: 70px;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba($white, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    &-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-logo {
+        
+        a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $text-color;
+            text-decoration: none;
+            transition: color $transition-time ease;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &-menu {
+        @include mobile {
+            position: fixed;
+            top: $navbar-height;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - #{$navbar-height});
+            background-color: $white;
+            transition: left $transition-time ease;
+
+            &.active {
+                left: 0;
+            }
+        }
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color $transition-time ease;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+
+    @include mobile {
+        display: flex;
+    }
+
+    span {
+        width: 25px;
+        height: 2px;
+        background-color: $text-color;
+        transition: all $transition-time ease;
+    }
+
+    &.active {
+        span {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+        }
+    }
+}
+
+
+// .skill-info {
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+// }
+// .skill-icon {
+//   width: 24px;
+//   height: 24px;
+// }
